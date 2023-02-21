@@ -30,6 +30,7 @@ public class PrintCalendar {
 		printDates(month, year, firstDayOfWeek);
 	}
 
+
 	private static void printDates(int month, int year, int firstDayOfWeek) {
 		int weekDayNumber = getFirstDay(month, year, firstDayOfWeek);
 		int offset = getOffset(weekDayNumber);
@@ -81,7 +82,7 @@ public class PrintCalendar {
 		int res = DayOfWeek.valueOf("MONDAY").getValue();
 		if (args.length > 2) {
 			try {
-				res = DayOfWeek.valueOf(args[2].toUpperCase()).getValue();
+				res = DayOfWeek.valueOf(args[2].toUpperCase()).getValue()-1;
 			} catch (IllegalArgumentException e) {
 				throw new Exception(
 						"There is no such day. Try from [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday].");
