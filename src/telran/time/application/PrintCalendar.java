@@ -82,7 +82,7 @@ public class PrintCalendar {
 		int res = DayOfWeek.valueOf("MONDAY").getValue();
 		if (args.length > 2) {
 			try {
-				res = DayOfWeek.valueOf(args[2].toUpperCase()).getValue()-1;
+				res = DayOfWeek.valueOf(args[2].toUpperCase()).ordinal();
 			} catch (IllegalArgumentException e) {
 				throw new Exception(
 						"There is no such day. Try from [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday].");
